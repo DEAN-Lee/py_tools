@@ -1,0 +1,605 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ex",
+				"exists"
+			],
+			[
+				"e",
+				"else\tkeyword"
+			],
+			[
+				"z",
+				"zpath\tstatement"
+			],
+			[
+				"fi",
+				"Filename\tstatement"
+			],
+			[
+				"n",
+				"nrows\tstatement"
+			],
+			[
+				"re",
+				"reqTime\tstatement"
+			],
+			[
+				"t",
+				"true"
+			],
+			[
+				"f",
+				"-function"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"m",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"mp",
+				"Markdown Preview: Save to HTML"
+			],
+			[
+				"mpv",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"mdp",
+				"Markdown Preview: Save to HTML"
+			],
+			[
+				"table",
+				"Table Editor: Enable for current view"
+			],
+			[
+				"mar",
+				"Markdown Preview: Preview in Browser"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: inset",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: res",
+				"Package Control: Add Repository"
+			],
+			[
+				"inse",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 157.0,
+		"history":
+		[
+			"MarkdownLivePreview"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/D/reportTool/generatorTrade.py",
+		"/D/reportTool/genV1.0.py",
+		"/D/reportTool/generator.py",
+		"/D/workspace1/system_architect/.git/config",
+		"/D/workspace1/py_tools/.git/config",
+		"/D/data/dubbo/提现补充.json",
+		"/C/Users/limeng/Desktop/temp.sql",
+		"/C/Users/limeng/Desktop/sql优化/sql/limeng_2020-12-29-LCB-33526-1.sql",
+		"/C/Users/limeng/Desktop/sql优化/sql/limeng_2020-12-29-LCB-33526.sql",
+		"/D/workspace/soa-product/pom.xml",
+		"/D/workspace/soa-product/soa-product-api/pom.xml",
+		"/D/workspace/soa-product/soa-product-service/pom.xml",
+		"/C/Users/limeng/Desktop/sql优化/sql/limeng_2020-12-22-LCB-33481.sql",
+		"/C/Users/limeng/Desktop/sql优化/sql/limeng_2020-12-15-LCB-33019.sql",
+		"/C/Users/limeng/Desktop/sql优化/sql/limeng_2020-12-07-LCB-33019.sql",
+		"/C/Users/limeng/Desktop/乐车邦合作商接入技术指南.md",
+		"/C/Users/limeng/Desktop/sql优化/sql/limeng_2020-11-26-LCB-32750.sql",
+		"/D/workspace/soa-product/generator/generatorConfig_demo.xml",
+		"/C/Users/limeng/Desktop/sql优化/sql/limeng_2020-11-11.sql",
+		"/C/Users/limeng/Desktop/appid_plugin.sql",
+		"/C/Users/limeng/Desktop/sql优化/sql/limeng_2020-12-04-LCB-33019.sql",
+		"/D/vr/demo1/demo1/index.html",
+		"/C/Users/limeng/Desktop/三方对接/乐车邦合作商接入技术指南.md",
+		"/C/Users/limeng/Desktop/sql优化/sql/limeng_2020-11-24-LCB-32339.sql",
+		"/D/workspace1/system_architect/notes/course/操作系统.md",
+		"/D/vr/demo1/demo1/pano.xml",
+		"/D/workspace1/basic-course/.git/config",
+		"/C/Users/limeng/AppData/Roaming/Sublime Text 3/Packages/User/Markdown.sublime-settings",
+		"/C/Users/limeng/Documents/WeChat Files/DOVE_Y_N/FileStorage/File/2020-11/channel.js",
+		"/C/Users/limeng/Desktop/三方对接/乐车邦合作商接入技术指南_2020-11-3.html",
+		"/C/Users/limeng/Desktop/三方对接/乐车邦合作商接入技术指南_2020-11-3.md",
+		"/C/Users/limeng/Desktop/temp.json",
+		"/C/Users/limeng/Desktop/sql优化/sql/limeng_2020-10-22-LCB-32339.sql",
+		"/C/Users/limeng/Documents/WeChat Files/DOVE_Y_N/FileStorage/File/2020-10/mc_my_car-update.sql",
+		"/D/workspace1/course-spring/course-spring-framework/src/main/resources/docs/Bean工厂_1.16.md",
+		"/C/Users/limeng/Desktop/sql优化/sql/limeng_2020-10-20-LCB-32339.sql",
+		"/C/Users/limeng/Desktop/三方对接/cb_mic_after_sale_db.mc_my_car.sql",
+		"/C/Users/limeng/AppData/Roaming/Sublime Text 3/Packages/Table Editor/README.md",
+		"/C/Users/limeng/AppData/Roaming/Sublime Text 3/Packages/Table Editor/Default (Windows).sublime-keymap",
+		"/C/Users/limeng/Desktop/团油/团油.md",
+		"/C/Users/limeng/AppData/Roaming/Sublime Text 3/Packages/MarkdownEditing/Markdown.sublime-settings",
+		"/C/Users/limeng/AppData/Roaming/Sublime Text 3/Packages/User/Markdown (Standard).sublime-settings",
+		"/C/Users/limeng/AppData/Roaming/Sublime Text 3/Packages/MarkdownEditing/Markdown (Standard).sublime-settings",
+		"/C/Users/limeng/AppData/Roaming/Sublime Text 3/Packages/MarkdownEditing/README.md",
+		"/C/Users/limeng/AppData/Roaming/Sublime Text 3/Packages/User/MultiMarkdown.sublime-settings",
+		"/C/Users/limeng/AppData/Roaming/Sublime Text 3/Packages/MarkdownEditing/MultiMarkdown.sublime-settings",
+		"/C/Users/limeng/AppData/Roaming/Sublime Text 3/Packages/MarkdownEditing/Default (Windows).sublime-keymap",
+		"/C/Users/limeng/Desktop/monitor-2020-09-25.log",
+		"/C/Users/limeng/Desktop/service-2020-09-25.log",
+		"/C/Users/limeng/Desktop/腾讯出行/车牌查车型.json",
+		"/C/Users/limeng/Desktop/order.txt",
+		"/C/Users/limeng/Desktop/sql优化/sql/limeng_20200818-LCB-31383.sql",
+		"/D/data/logs/access/hapi-docking/monitor.log",
+		"/C/Users/limeng/Documents/WeChat Files/DOVE_Y_N/FileStorage/File/2020-09/service.log",
+		"/C/Users/limeng/Desktop/sql优化/sql/limeng_20200916.sql",
+		"/D/maven/apache-maven-3.5.4/conf/settings.xml",
+		"/D/data/logs/access/hapi-docking/service.log",
+		"/C/Users/limeng/Desktop/sql优化/sql/limeng_20200902-LCB-29982.sql",
+		"/C/Users/limeng/Desktop/sql优化/sql/limeng_20200810-LCB-31254.sql",
+		"/C/Users/limeng/Desktop/sql优化/sql/limeng_20200813-LCB-31302.sql",
+		"/C/Users/limeng/Desktop/腾讯出行/README(3).md",
+		"/C/Users/limeng/Desktop/腾讯出行/README(4).md",
+		"/C/Users/limeng/Desktop/腾讯出行/腾讯出行插件接入.md",
+		"/C/Users/limeng/Desktop/city-res.json",
+		"/D/data/logs/access/soa-micro-order-service/service.log",
+		"/D/go_workspace/test/hello.go",
+		"/C/Users/limeng/Desktop/sql/limeng_20200803-LCB-31064.sql",
+		"/C/Users/limeng/Desktop/sql优化/sql/limeng_20200810-LCB-31121.sql",
+		"/C/Users/limeng/Desktop/sql/limeng_20200731-LCB-31064.sql",
+		"/D/Program Files/JetBrains/GoLand 2020.2/bin/goland.exe.vmoptions",
+		"/D/Program Files/JetBrains/GoLand 2020.2/bin/goland64.exe.vmoptions",
+		"/C/Users/limeng/Desktop/limeng_20200731-LCB-30041.sql",
+		"/C/Users/limeng/Desktop/字典配置-订单中心.json",
+		"/C/Users/limeng/Desktop/字典配置-李梦.txt",
+		"/C/Users/limeng/Desktop/QueryOrderListReq.java",
+		"/C/Users/limeng/Desktop/req.json",
+		"/C/Users/limeng/Desktop/三方对接/openApi.postman_collection.json",
+		"/C/Users/limeng/Desktop/车车下单失败.json",
+		"/D/workspace1/course-spring/.git/config",
+		"/C/Users/limeng/Desktop/三方对接/【乐车邦】H5接入-对接文档模板.docx",
+		"/D/workspace1/course-spring/.idea/misc.xml",
+		"/D/workspace1/course-spring/.idea/modules.xml",
+		"/D/zookeeper-3.4.13/conf/zoo_sample.cfg",
+		"/D/zookeeper-3.4.13/conf/zoo.cfg",
+		"/C/Users/limeng/Desktop/春节库存关闭/湖北店铺",
+		"/C/Users/limeng/Documents/WeChat Files/DOVE_Y_N/FileStorage/File/2020-04/顺通违章查询记录(1)",
+		"/C/Users/limeng/Documents/WeChat Files/DOVE_Y_N/FileStorage/File/2020-04/车车查询次数统计",
+		"/C/Users/limeng/Desktop/simple.pcapng",
+		"/C/Users/limeng/AppData/Local/Google/Chrome/Application/74.0.3729.131/Extensions/external_extensions.json",
+		"/C/Users/limeng/AppData/Local/Google/Chrome/Application/plugins/npwangwang.dll",
+		"/C/Users/limeng/Desktop/管理/配置.txt",
+		"/D/nginx-1.13.12/conf/nginx.conf",
+		"/C/Users/limeng/Desktop/connections.ncx",
+		"/C/Users/limeng/Desktop/service.log",
+		"/C/Users/limeng/Desktop/jetbrains/README.txt",
+		"/C/Users/limeng/Desktop/[郝斌老师]自学数据结构大纲笔记.txt",
+		"/D/Program Files/JetBrains/IntelliJ IDEA 2019.3.1/bin/idea64.exe",
+		"/C/Users/limeng/Documents/WeChat Files/DOVE_Y_N/FileStorage/File/2020-01/MsgTemplate.java",
+		"/C/Users/limeng/Documents/WeChat Files/DOVE_Y_N/FileStorage/File/2020-01/new 12.json",
+		"/C/Users/limeng/Documents/WeChat Files/All Users/config/config.data",
+		"/C/Users/limeng/Desktop/artifacts.xml",
+		"/C/Users/limeng/Desktop/车牌等vin.txt",
+		"/C/Users/limeng/Documents/WeChat Files/DOVE_Y_N/FileStorage/File/2019-12/可能有问题的car-number排查.sql",
+		"/C/Users/limeng/Documents/WeChat Files/DOVE_Y_N/FileStorage/File/2019-12/car-vin-fix-by-number.sql",
+		"/C/Users/limeng/Desktop/支付交易模块整理",
+		"/C/Users/limeng/Desktop/三方对接/博泰appCode.json",
+		"/C/Users/limeng/Desktop/列表 vo.json",
+		"/C/Users/limeng/Desktop/orderDetail.json",
+		"/C/Users/limeng/Documents/WeChat Files/DOVE_Y_N/FileStorage/File/2019-12/apple-app-site-association.json",
+		"/C/Users/limeng/Desktop/update_supplier_tel.sql",
+		"/C/Users/limeng/Desktop/C端逻辑sql梳理.sql",
+		"/C/Users/limeng/Desktop/外采",
+		"/C/Users/limeng/Desktop/生产环境mq集群没有消费者.txt",
+		"/C/Users/limeng/Documents/WeChat Files/DOVE_Y_N/FileStorage/File/2019-12/new_item_relation.sql",
+		"/C/Users/limeng/Desktop/test.json",
+		"/D/workspace1/basic-course/course-io/target/classes/org/deanlee/course/blockingio/InputOrOutStreamDemo.class",
+		"/C/Users/limeng/Desktop/管理/米车宝.txt",
+		"/C/Users/limeng/Documents/WeChat Files/DOVE_Y_N/Files/SSHFTPUtil.java",
+		"/C/Users/limeng/Desktop/citic_mall_rsa_publickey.key",
+		"/C/Users/limeng/Desktop/citic_mall_master_rsa_publickey.key",
+		"/C/Users/limeng/Desktop/三方对接/SignToolsOpen.java",
+		"/D/shadows/pac.txt",
+		"/C/Users/limeng/Documents/WeChat Files/DOVE_Y_N/FileStorage/File/2019-09/comment_user_name.sql",
+		"/C/Users/limeng/Desktop/同城不同价/入参",
+		"/C/Users/limeng/Documents/WeChat Files/DOVE_Y_N/FileStorage/File/2019-09/new 2.java",
+		"/C/Users/limeng/Desktop/优惠券.txtg",
+		"/D/data/dubbo/.cache/dubbo-registry_hapi-saas-fours.properties",
+		"/C/Users/limeng/Desktop/三方对接/lcb_common_city.sql"
+	],
+	"find":
+	{
+		"height": 41.0
+	},
+	"find_in_files":
+	{
+		"height": 105.0,
+		"where_history":
+		[
+			"<current file>",
+			"<open folders>"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"zpath_new",
+			"table",
+			"2907834",
+			"2908048",
+			"December 31st 2020, ",
+			"December 30th 2020, ",
+			"发放奖金失败,活动已过期,订单id",
+			"December 30th 2020, 09:03:36.766\t发放奖金失败,活动已过期,订单id",
+			"category_name",
+			"user_usable_state",
+			"demo",
+			"id\":",
+			"inviteUserId\":",
+			",\\\"orderNumber\\S*$",
+			"\"terminalVersion\\S*\\s\\S*\\\"id",
+			"\"terminalVersion\\S*\\s\\S*",
+			",\\\"orderNumber\\S*$",
+			"\"terminalVersion\\S*\\s\\S*\\\"id",
+			"\\S*\\\"inviteUserId",
+			"\":",
+			"inviteUserId\":",
+			",\\\"orderNumber\\S*$",
+			"\\S*\\\"inviteUserId",
+			"\"terminalVersion\\S*\\s\\S*\\\"id",
+			"terminalVersion\\S*",
+			"\\S*invite",
+			"0000",
+			"经销商",
+			"lowDealerBuyPrice",
+			"middleDealerBuyPrice",
+			"/",
+			"\t",
+			",",
+			"^\\s",
+			"\\s",
+			"\\s*",
+			"\\r",
+			"重新排序版本\t",
+			"操作",
+			"售后-魔轮折扣加油插件",
+			"17/十二月/20",
+			"08/十二月/20",
+			"没有问题",
+			"未发布",
+			"manage",
+			"hapi",
+			"manage",
+			"附录1",
+			"service",
+			"\n*",
+			"操作系统的类型和结构",
+			"dubbo",
+			"IGasDiscountOrderAdminService",
+			", ",
+			",",
+			"附录2",
+			"附录1",
+			"addCriterion(\"",
+			"notifyType",
+			"合作方订单编号",
+			"Long",
+			"String",
+			"lcbModelId",
+			"string",
+			"是",
+			"订单创建通知",
+			"订单状态回调接口",
+			"加油",
+			"团油",
+			"团油加油",
+			"wrap_width",
+			"draw_centered",
+			"keep_centered",
+			"zhong_xin",
+			"1665",
+			"S925304193255035",
+			"1665",
+			"zhong_xin",
+			"1665\"",
+			"1665",
+			"lcb",
+			"\"",
+			"\"cityName\"",
+			"^:",
+			":",
+			"\"cityCode\"",
+			"\"cityName\"",
+			"\"",
+			"\"cityName\"",
+			"\"cityCode\":\"",
+			"[0-9]\\\"\\n",
+			"北屯",
+			"双河",
+			"^(\\s*)",
+			"^\\\"or\\S.*",
+			"金昌",
+			"市",
+			"^(\\s*)",
+			"\\s",
+			"\\s\"",
+			"\\s\"citySpel\\S.*",
+			"\\s\\n",
+			"  ",
+			"\\n",
+			"                     ",
+			"\\s",
+			",",
+			"[",
+			" ]",
+			"}",
+			"{",
+			"\\s\\\"city\\\".*",
+			"\\s\\\"pro\\S*.*",
+			"^\\\"e",
+			"^\"e",
+			"^\\\"e",
+			"^\\\"",
+			"^\\\"pr",
+			"^\\\"p",
+			"^\"",
+			"^\\\"",
+			"^pr",
+			"^\\\"provinceCode*",
+			"^\\\"provinceCode*~",
+			"^\\\"provinceCode*",
+			"^\"provinceCode*",
+			"provinceCode",
+			" \"orderBy\": 0"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": true,
+		"replace_history":
+		[
+			"",
+			"menu_name",
+			"product",
+			"",
+			"id",
+			"",
+			"inviteUserId",
+			"",
+			"inviteUserId",
+			"",
+			"invite",
+			"00",
+			"",
+			"车况一般",
+			"车况良好",
+			"-",
+			",",
+			"",
+			", oti.",
+			"addCriterion(\"oti.",
+			"modelId",
+			"String",
+			"保养",
+			"乐车邦",
+			"乐车邦保养",
+			"",
+			"\\n",
+			"",
+			"\\n",
+			"",
+			"\"",
+			"",
+			"addCriterion(\"o.",
+			", o.",
+			",  o.",
+			", o.",
+			"addCriterion(\"oai.",
+			"addCriterion(\"opi.",
+			"addCriterion(\"obi.",
+			"addCriterion(\"opi.",
+			"",
+			"orderId",
+			"addCriterion(\"od.",
+			"addCriterion(\"odi.",
+			"addCriterion(\"oqi.",
+			"addCriterion(\"ovi.",
+			"addCriterion(\"oasi.",
+			"addCriterion(\"oai.",
+			"addCriterion(\"ogi.",
+			"",
+			"\"brandTypeId\"",
+			"\"gradeValue\"",
+			"addCriterion(\"oti.",
+			"=dubbo://localhost:9099",
+			"",
+			"1582819200000",
+			"",
+			"update",
+			"",
+			"_",
+			"",
+			"car_number",
+			"vin",
+			"lcb_mic_after_sale_db.mc_my_car",
+			"",
+			"=dubbo://localhost:9015",
+			"",
+			"=",
+			"",
+			"9017",
+			"",
+			"jpg",
+			"",
+			"\"",
+			"'",
+			"",
+			"lcb_common_city",
+			"",
+			"job",
+			"",
+			"\"hasPicture\":false",
+			"",
+			",",
+			"",
+			"\"img\"",
+			","
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 25.0
+	},
+	"input":
+	{
+		"height": 39.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.exec":
+	{
+		"height": 235.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/User/python3.sublime-build",
+	"project": "generatorTrade.sublime-project",
+	"replace":
+	{
+		"height": 46.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"GetPostDataByPostion",
+				"GetPostDataByPostion"
+			]
+		],
+		"width": 592.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 217.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

@@ -2,6 +2,7 @@ from win32com.client import Dispatch
 from datetime import datetime, timedelta
 import os
 
+
 print("运行开始！！")
 zpath = os.getcwd() + '/'
 zpath_new = os.getcwd() + '/data/'
@@ -22,7 +23,7 @@ for i in range(nrows):
     SCCJ = str(table.Cells(i + 3, 3).Value)
     productName = str(table.Cells(i + 3, 4).Value)
     productTime = str(table.Cells(i + 3, 5).Value)
-    PH = str(table.Cells(i + 3, 6).Value)
+    PH = table.Cells(i + 3, 6).Value
     LC = str(table.Cells(i + 3, 7).Value)
     GCZCH = table.Cells(i + 3, 8).Value
     YJZH = str(table.Cells(i + 3, 9).Value)
@@ -48,7 +49,10 @@ for i in range(nrows):
     if PH == 'None':
         pass
     else:
-        doc.Bookmarks("PH").Range.Text = PH
+        if isinstance(PH, float):
+            doc.Bookmarks("PH").Range.Text = int(float(PH))
+        else:
+            doc.Bookmarks("PH").Range.Text = PH
 
     if SCCJ == 'None':
         pass
