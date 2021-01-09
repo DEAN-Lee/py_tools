@@ -16,7 +16,7 @@ my_file = Path(my_file_name)
 if my_file.exists():
     pass
 else:
-    print("文件不存在")
+    print("文件不存在,重新输入文件名称！")
     os._exit()
 
 my_dir_name = zpath + filename.replace('.xlsx', '')
@@ -26,7 +26,7 @@ if my_dir.exists():
     pass
 else:
     os.makedirs(my_dir)
-    print("创建目录")
+    print("创建文件存储目录")
 
 app = Dispatch('Word.Application')
 xlApp = Dispatch("Excel.Application")
@@ -40,19 +40,19 @@ nrows = info.Rows.Count
 print('生成报告数:' + str(nrows - 2))
 
 for i in range(nrows):
-    companyName = table.Cells(i + 3, 1).Value
+    reqTimeStr = str(table.Cells(i + 3, 1).Value)
+    companyName = table.Cells(i + 3, 2).Value
     if companyName is None:
         break
-    productNumber = str(table.Cells(i + 3, 2).Value)
-    SCCJ = str(table.Cells(i + 3, 3).Value)
-    productName = str(table.Cells(i + 3, 4).Value)
-    productTime = str(table.Cells(i + 3, 5).Value)
-    PH = table.Cells(i + 3, 6).Value
-    LC = str(table.Cells(i + 3, 7).Value)
-    GCZCH = table.Cells(i + 3, 8).Value
-    YJZH = str(table.Cells(i + 3, 9).Value)
-    CYWZ = str(table.Cells(i + 3, 10).Value)
-    reqTimeStr = str(table.Cells(i + 3, 11).Value)
+    productNumber = str(table.Cells(i + 3, 3).Value)
+    SCCJ = str(table.Cells(i + 3, 4).Value)
+    productName = str(table.Cells(i + 3, 5).Value)
+    productTime = str(table.Cells(i + 3, 6).Value)
+    PH = table.Cells(i + 3, 7).Value
+    LC = str(table.Cells(i + 3, 8).Value)
+    GCZCH = table.Cells(i + 3, 9).Value
+    YJZH = str(table.Cells(i + 3, 10).Value)
+    CYWZ = str(table.Cells(i + 3, 11).Value)
     GH = str(table.Cells(i + 3, 12).Value).strip()
     # 日期转换
     reqTime = datetime.strptime(reqTimeStr, '%Y.%m.%d')
