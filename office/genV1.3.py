@@ -36,7 +36,7 @@ def read_excel():
 
         print('生成报告数:' + str(nrows - 2))
 
-        for i in range(nrows-2):
+        for i in range(nrows - 2):
             reqTimeStr = str(table.cell_value(i + 2, 0))
             companyName = table.cell_value(i + 2, 1)
             if companyName is None:
@@ -137,6 +137,7 @@ def read_excel():
         f = open(blogpath, 'w+')
         f.writelines(repr(err))
         f.close()
+
 
 if __name__ == '__main__':
     # 读取Excel
