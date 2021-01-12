@@ -37,7 +37,7 @@ def read_excel():
         print('生成报告数:' + str(nrows - 2))
 
         for i in range(nrows - 2):
-            reqTimeStr = str(table.cell_value(i + 2, 0))
+            reqTimeStr = str(table.cell_value(i + 2, 0)).strip()
             companyName = table.cell_value(i + 2, 1)
             if companyName is None:
                 break
@@ -51,9 +51,10 @@ def read_excel():
             YJZH = table.cell_value(i + 2, 9)
             CYWZ = str(table.cell_value(i + 2, 10)).strip()
             GH = str(table.cell_value(i + 2, 11)).strip()
+            reportTime = str(table.cell_value(i + 2, 12)).strip()
             # 日期转换
             reqTime = datetime.strptime(reqTimeStr, '%Y.%m.%d')
-            nextNow = reqTime + timedelta(days=1)
+            reportTime = datetime.strptime(reportTime, '%Y.%m.%d')
 
             tpl = DocxTemplate(zpath + 'tempdoc.docx')
             context = {
@@ -70,7 +71,7 @@ def read_excel():
                 'GH': GH,
                 'reqTime': "{0:%Y}.{0:%m}.{0:%d}".format(reqTime),
                 'checkTime': "{0:%Y}.{0:%m}.{0:%d}".format(reqTime),
-                'reportTime': "{0:%Y}.{0:%m}.{0:%d}".format(nextNow),
+                'reportTime': "{0:%Y}.{0:%m}.{0:%d}".format(reportTime),
             }
 
             if productName == 'None':
