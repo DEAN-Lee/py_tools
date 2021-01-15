@@ -1,0 +1,213 @@
+from datetime import datetime
+from pathlib import Path
+from tkinter import *
+from tkinter import filedialog
+
+from PIL import ImageTk
+from docxtpl import DocxTemplate
+import xlrd
+import os
+
+
+def read_excel():
+    zpath = os.getcwd() + '/'
+    try:
+        filename = input('输入文件名： ')
+        print(filename)
+
+        my_file_name = zpath + filename
+
+        my_file = Path(my_file_name)
+        if my_file.exists():
+            pass
+        else:
+            print("文件不存在,重新输入文件名称！")
+            os._exit()
+
+        my_dir_name = zpath + filename.replace('.xlsx', '')
+
+        my_dir = Path(my_dir_name)
+        if my_dir.exists():
+            pass
+        else:
+            os.makedirs(my_dir)
+            print("创建文件存储目录")
+        # 打开excel
+        x1 = xlrd.open_workbook(my_file_name)
+        # 打开sheet1
+        table = x1.sheet_by_index(0)
+        nrows = table.nrows
+
+        print('生成报告数:' + str(nrows - 2))
+
+        for i in range(nrows - 2):
+            reqTimeStr = str(table.cell_value(i + 2, 0)).strip()
+            companyName = table.cell_value(i + 2, 1)
+            if companyName is None:
+                break
+            productNumber = str(table.cell_value(i + 2, 2)).strip()
+            SCCJ = str(table.cell_value(i + 2, 3)).strip()
+            productName = str(table.cell_value(i + 2, 4)).strip()
+            productTime = table.cell_value(i + 2, 5)
+            PH = table.cell_value(i + 2, 6)
+            LC = str(table.cell_value(i + 2, 7)).strip()
+            GCZCH = table.cell_value(i + 2, 8)
+            YJZH = table.cell_value(i + 2, 9)
+            CYWZ = str(table.cell_value(i + 2, 10)).strip()
+            GH = str(table.cell_value(i + 2, 11)).strip()
+            reportTime = str(table.cell_value(i + 2, 12)).strip()
+            # 日期转换
+            reqTime = datetime.strptime(reqTimeStr, '%Y.%m.%d')
+            reportTime = datetime.strptime(reportTime, '%Y.%m.%d')
+
+            tpl = DocxTemplate(zpath + 'tempdoc.docx')
+            context = {
+                'companyName': companyName,
+                'productNumber': productNumber,
+                # 'SCCJ': SCCJ,
+                # 'productName': productName,
+                # 'productTime': productTime,
+                # 'PH': PH,
+                # 'LC': LC,
+                # 'GCZCH': GCZCH,
+                # 'YJZH': YJZH,
+                'CYWZ': CYWZ,
+                'GH': GH,
+                'reqTime': "{0:%Y}.{0:%m}.{0:%d}".format(reqTime),
+                'checkTime': "{0:%Y}.{0:%m}.{0:%d}".format(reqTime),
+                'reportTime': "{0:%Y}.{0:%m}.{0:%d}".format(reportTime),
+            }
+
+            if productName == 'None':
+                context['productName'] = ''
+            else:
+                context['productName'] = productName
+
+            if LC == 'None':
+                context['LC'] = ''
+            else:
+                context['LC'] = LC
+
+            if productTime is None:
+                context['productTime'] = ''
+            else:
+                if isinstance(productTime, float):
+                    context['productTime'] = int(float(productTime))
+                elif isinstance(productTime, int):
+                    context['productTime'] = int(productTime)
+                else:
+                    context['productTime'] = str(
+                        productTime).replace('00:00:00+00:00', '')
+
+            if PH is None:
+                context['PH'] = ''
+            else:
+                if isinstance(PH, float):
+                    context['PH'] = int(float(PH))
+                else:
+                    context['PH'] = PH
+
+            if SCCJ == 'None':
+                context['SCCJ'] = ''
+            else:
+                context['SCCJ'] = SCCJ
+
+            if YJZH is None:
+                context['YJZH'] = ''
+            else:
+                if isinstance(YJZH, float):
+                    context['YJZH'] = int(float(YJZH))
+                else:
+                    context['YJZH'] = YJZH
+
+            if GCZCH is None:
+                context['GCZCH'] = ''
+            else:
+                if isinstance(GCZCH, float):
+                    context['GCZCH'] = int(float(GCZCH))
+                else:
+                    context['GCZCH'] = GCZCH
+
+            temp = str(i + 1)
+            saveFileName = my_dir_name + '/' + \
+                           companyName.replace('有限公司', '').strip() + '_' + \
+                           GH + "_" + temp + '.docx'
+            print(saveFileName)
+            tpl.render(context)
+            tpl.save(saveFileName)
+
+    except Exception as err:
+        print("err %s: " % err)
+        blogpath = os.path.join(zpath, 'log_err.txt')
+        f = open(blogpath, 'w+')
+        f.writelines(repr(err))
+        f.close()
+
+
+class Application(Frame):
+    def __init__(self, master=None):
+        Frame.__init__(self, master, bg='white')
+        self.pack(expand=YES, fill=BOTH)
+        self.window_init()
+        self.createWidgets()
+
+    def window_init(self):
+        self.master.title('报告批处理系统')
+        self.master.bg = 'white'
+        width, height = self.master.maxsize()
+        self.master.geometry("{}x{}".format(500, 500))
+
+    def createWidgets(self):
+        # # fm1
+        self.fm1 = Frame(self, bg='white')
+        self.openButton = Button(self.fm1, text='File Open', bg='#FF4081', fg='white', font=('微软雅黑', 36), command=self.fileOpen)
+        # self.titleLabel = Label(self.fm1, text="报告合成系统", font=('微软雅黑', 32), fg="black", bg='white')
+        self.openButton.pack()
+        self.fm1.pack(side=TOP, expand=YES, fill=NONE, pady=10)
+
+
+
+        # fm2
+        # self.fm2 = Frame(self, bg='white')
+        # self.fm2_left = Frame(self.fm2, bg='white')
+        # self.fm2_right = Frame(self.fm2, bg='white')
+        # self.fm2_left_top = Frame(self.fm2_left, bg='white')
+        # self.fm2_left_bottom = Frame(self.fm2_left, bg='white')
+        #
+        # self.predictEntry = Entry(self.fm2_left_top, font=('微软雅黑', 24), width='72', fg='#FF4081')
+        # self.predictButton = Button(self.fm2_left_top, text='predict sentence', bg='#FF4081', fg='white', font=('微软雅黑', 36), width='16', command=self.output_predict_sentence)
+        # self.predictButton.pack(side=LEFT)
+        # self.predictEntry.pack(side=LEFT, fill='y', padx=20)
+        # self.fm2_left_top.pack(side=TOP, fill='x')
+        #
+        # self.truthEntry = Entry(self.fm2_left_bottom, font=('微软雅黑', 24), width='72', fg='#22C9C9')
+        # self.truthButton = Button(self.fm2_left_bottom, text='ground truth', bg='#22C9C9', fg='white',font=('微软雅黑', 36), width='16', command=self.output_ground_truth)
+        # self.truthButton.pack(side=LEFT)
+        # self.truthEntry.pack(side=LEFT, fill='y', padx=20)
+        # self.fm2_left_bottom.pack(side=TOP, pady=10, fill='x')
+        #
+        # self.fm2_left.pack(side=LEFT, padx=60, pady=20, expand=YES, fill='x')
+        # self.fm2_right.pack(side=RIGHT, padx=60)
+        # self.fm2.pack(side=TOP, expand=NO, fill="x")
+
+
+    def output_predict_sentence(self):
+        predicted_sentence_str = 'hello world.'
+        self.predictEntry.delete(0, END)
+        self.predictEntry.insert(0, predicted_sentence_str)
+
+    def output_ground_truth(self):
+        ground_truth = 'this is ground truth.'
+        self.truthEntry.delete(0, END)
+        self.truthEntry.insert(0, ground_truth)
+
+    def fileOpen(self):
+        r = filedialog.askopenfilename(title='Python tkinter',
+                                               filetypes=[('Python', '*.py *.pyw'), ('All files', '*')])
+        print(r)
+
+
+if __name__ == '__main__':
+    app = Application()
+    # to do
+    app.mainloop()
