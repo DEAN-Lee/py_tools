@@ -68,10 +68,9 @@ class Application(Frame):
     def fileOpen(self):
         fileName = filedialog.askopenfilename(title='选择表格文件', filetypes=[('Excel', '*.xlsx')])
         self.read_excel(fileName)
-        self.output_predict_sentence("结束")
+        # self.output_predict_sentence("结束")
 
     def read_excel(self, fileName):
-        zpath = os.getcwd() + '/'
         try:
             self.output_predict_sentence("选择文件为：" + fileName)
 
@@ -81,14 +80,14 @@ class Application(Frame):
             else:
                 self.output_predict_sentence("文件不存在,重新选择文件！")
 
-            fileNames = fileName.split('/')
-            my_dir_name = zpath + fileNames[len(fileNames) - 1].replace('.xlsx', '')
+            my_dir_name = fileName.replace('.xlsx', '')
             my_dir = Path(my_dir_name)
             if my_dir.exists():
                 pass
             else:
                 os.makedirs(my_dir)
-                self.output_predict_sentence("创建存储目录")
+                # self.output_predict_sentence("创建存储目录")
+
             # 打开excel
             x1 = xlrd.open_workbook(fileName)
             # 打开sheet1
@@ -101,7 +100,7 @@ class Application(Frame):
                 return
 
             self.output_predict_sentence('预计生成报告数:' + str(nrows - 2))
-            self.output_predict_sentence("开始渲染报告！")
+            self.output_predict_sentence("开始生成报告！")
 
             for i in range(nrows - 2):
                 reqTimeStr = str(table.cell_value(i + 2, 0)).strip()
@@ -195,11 +194,12 @@ class Application(Frame):
                 saveFileName = my_dir_name + '/' + \
                                companyName.replace('有限公司', '').strip() + '_' + \
                                GH + "_" + temp + '.docx'
-                self.output_predict_sentence("第" + temp + "文件：" + saveFileName)
+                # self.output_predict_sentence("第" + temp + "文件：" + saveFileName)
                 tpl.render(context)
                 tpl.save(saveFileName)
 
             update_valid(nrows - 2 + validCount[1])
+            self.output_predict_sentence("报告生成结束,共生成报告:" + repr(nrows - 2))
 
         except Exception as err:
             blogpath = resource_path(os.path.join('res', 'log_err.txt'))
