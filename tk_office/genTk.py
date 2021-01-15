@@ -6,6 +6,30 @@ from tkinter import filedialog
 from docxtpl import DocxTemplate
 import xlrd
 import os
+import configparser
+import sys
+
+
+def resource_path(relative_path):
+    if getattr(sys, 'frozen', False):
+        base_path = sys._MEIPASS
+    else:
+        base_path = os.path.dirname(os.path.abspath(__file__))
+    print(os.path.join(base_path, relative_path))
+    return os.path.join(base_path, relative_path)
+
+
+def valid_count():
+    config = configparser.ConfigParser()
+    config.read(resource_path(os.path.join('res', 'conf.ini')), encoding="utf8")
+    return config.getint("sys_config", "totalCount"), config.getint("sys_config", "usedCount")
+
+
+def update_valid(count):
+    config = configparser.ConfigParser()
+    config.read(resource_path(os.path.join('res', 'conf.ini')), encoding="utf8")
+    config.set("sys_config", "usedCount", repr(count))
+    config.write(open(resource_path(os.path.join('res', 'conf.ini')), "w"))
 
 
 class Application(Frame):
@@ -57,8 +81,6 @@ class Application(Frame):
             else:
                 self.output_predict_sentence("文件不存在,重新选择文件！")
 
-
-
             fileNames = fileName.split('/')
             my_dir_name = zpath + fileNames[len(fileNames) - 1].replace('.xlsx', '')
             my_dir = Path(my_dir_name)
@@ -66,15 +88,21 @@ class Application(Frame):
                 pass
             else:
                 os.makedirs(my_dir)
-                print("创建文件存储目录")
+                self.output_predict_sentence("创建存储目录")
             # 打开excel
             x1 = xlrd.open_workbook(fileName)
             # 打开sheet1
             table = x1.sheet_by_index(0)
             nrows = table.nrows
+            validCount = valid_count()
+
+            if nrows - 2 + validCount[1] > validCount[0]:
+                self.output_predict_sentence('数据异常，联系开发人员！')
+                return
 
             self.output_predict_sentence('预计生成报告数:' + str(nrows - 2))
             self.output_predict_sentence("开始渲染报告！")
+
             for i in range(nrows - 2):
                 reqTimeStr = str(table.cell_value(i + 2, 0)).strip()
                 companyName = table.cell_value(i + 2, 1)
@@ -95,7 +123,7 @@ class Application(Frame):
                 reqTime = datetime.strptime(reqTimeStr, '%Y.%m.%d')
                 reportTime = datetime.strptime(reportTime, '%Y.%m.%d')
 
-                tpl = DocxTemplate(zpath + 'tempdoc.docx')
+                tpl = DocxTemplate(resource_path(os.path.join('res', 'tempdoc.docx')))
                 context = {
                     'companyName': companyName,
                     'productNumber': productNumber,
@@ -171,9 +199,10 @@ class Application(Frame):
                 tpl.render(context)
                 tpl.save(saveFileName)
 
+            update_valid(nrows - 2 + validCount[1])
+
         except Exception as err:
-            print("err %s: " % err)
-            blogpath = os.path.join(zpath, 'log_err.txt')
+            blogpath = resource_path(os.path.join('res', 'log_err.txt'))
             f = open(blogpath, 'w+')
             f.writelines(repr(err))
             f.close()
