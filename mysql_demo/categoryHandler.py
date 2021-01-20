@@ -83,7 +83,6 @@ def current_time():
 
 if __name__ == '__main__':
     util = MySqlUtil()
-
     with open(os.path.join('conf', 'data.json'), encoding='utf-8') as f:
         data = json.load(f)
         i = 0
