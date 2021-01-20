@@ -130,7 +130,6 @@ if __name__ == '__main__':
 
                             m += 1
                     j += 1
-
             i += 1
 
     print(repr(current_time()))
