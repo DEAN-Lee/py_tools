@@ -9,7 +9,7 @@ class Crawl():
         super().__init__()
 
     def getData(self, page):
-        url = 'https://webapi.sporttery.cn/gateway/lottery/getHistoryPageListV1.qry?gameNo=85&provinceId=0&pageSize=100&isVerify=1&pageNo={}'.format(
+        url = 'https://webapi.sporttery.cn/gateway/lottery/getHistoryPageListV1.qry?gameNo=85&provinceId=0&pageSize=1&isVerify=1&pageNo={}'.format(
             page)
         headers = {
             'Host': 'webapi.sporttery.cn',
@@ -41,7 +41,7 @@ class Crawl():
 if __name__ == '__main__':
     crawl = Crawl()
     util = MySqlUtil()
-    for i in range(21):
+    for i in range(1):
         data = crawl.getData(i + 1)
         if data != -1:
             dataJson = json.loads(data)
@@ -67,3 +67,5 @@ if __name__ == '__main__':
                 record['created_time'] = util.current_time()
                 util.insert(table='lottery', data=record)
                 i += 1
+
+    util.close_db()

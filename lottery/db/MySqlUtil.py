@@ -1,30 +1,13 @@
-import os
-import configparser
-import sys
 import pymysql
 import time
 
-
-def resource_path(relative_path):
-    if getattr(sys, 'frozen', False):
-        base_path = sys._MEIPASS
-    else:
-        base_path = os.path.dirname(os.path.abspath(__file__))
-    return os.path.join(base_path, relative_path)
-
-
-def readDBConf():
-    config = configparser.ConfigParser()
-    config.read(resource_path(os.path.join('conf', 'conf.ini')), encoding="utf8")
-    return config.get("database", "host"), config.get("database", "user"), config.get(
-        "database", "passwd"), config.get("database", "charset"), config.get("database", "db"), config.getint(
-        "database", "port")
+from lottery.conf import common_data
 
 
 class MySqlUtil:
     def __init__(self):
         try:
-            config = readDBConf()
+            config = common_data.readDBConf()
             self._conn = pymysql.connect(host=config[0],
                                          user=config[1],
                                          password=config[2],
@@ -56,6 +39,17 @@ class MySqlUtil:
         insert_id = cursor.lastrowid
         self._conn.commit()
         return insert_id
+
+    # 查询多条数据在数据表中
+    def select_more(self, table, range_str, field='*'):
+        sql = 'SELECT ' + field + ' FROM ' + table + ' WHERE ' + range_str
+        try:
+            with self.__getCursor() as cursor:
+                cursor.execute(sql)
+            self._conn.commit()
+            return cursor.fetchall()
+        except pymysql.Error as e:
+            return False
 
     def exist(self, **kwargs):
         """判断是否存在"""
