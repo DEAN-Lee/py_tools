@@ -37,12 +37,14 @@ if __name__ == '__main__':
 
     red_dict = {}
     blue_dict = {}
-    for i in red_counter.most_common():  # 使用collections模块的counter统计红球和蓝球各个号码的出现次数
+    # 使用collections模块的counter统计红球和蓝球各个号码的出现次数
+    for i in red_counter.most_common():
         red_dict['{}'.format(i[0])] = i[1]
     for j in blue_counter.most_common():
         blue_dict['{}'.format(j[0])] = j[1]
 
-    red_list = sorted(red_counter.most_common(), key=lambda number: number[0])  # 对红蓝球号码和次数重新进行排序
+    # 对红蓝球号码和次数重新进行排序
+    red_list = sorted(red_counter.most_common(), key=lambda number: number[0])
     blue_list = sorted(blue_counter.most_common(), key=lambda number: number[0])
 
     red_bar = Bar()
