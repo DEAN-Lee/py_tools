@@ -32,7 +32,6 @@ class Crawl():
         print(r.status_code)
         r.encoding = 'utf-8'
         if r.status_code == 200:
-            print(type(r.text))
             return r.text
         else:
             return -1
@@ -68,4 +67,4 @@ if __name__ == '__main__':
                 util.insert(table='lottery', data=record)
                 i += 1
 
-    util.close_db()
+    # util.close_db()
