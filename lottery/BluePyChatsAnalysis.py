@@ -23,20 +23,15 @@ class RenderChats:
 
 if __name__ == '__main__':
     dbUtil = MySqlUtil()
-    data = dbUtil.select_more('lottery', 'draw_time>="2021-01-01"')
+    data = dbUtil.select_more('lottery', 'draw_time>="2020-01-01"')
     blue_balls = []
     blue_num = []
     for value in data:
         tag = int(str(value['aft_num1']) + str(value['aft_num2']))
         blue_balls.append(tag)
-        blue_num.append(value['draw_num'])
+        blue_num.append(str(value['draw_num']))
 
     blue_counter = Counter(blue_balls)
-
-    blue_dict = {}
-    # 使用collections模块的counter统计红球和蓝球各个号码的出现次数
-    for j in blue_counter.most_common():
-        blue_dict['{}'.format(j[0])] = j[1]
 
     # 对红蓝球号码和次数重新进行排序
     blue_list = sorted(blue_counter.most_common(), key=lambda number: number[0])
@@ -57,10 +52,22 @@ if __name__ == '__main__':
     ))
 
     blue_line = Line(init_opts=opts.InitOpts(width="1800px", height="800px"))
-    blue_line.set_global_opts(title_opts=opts.TitleOpts(title="Line-基本示例"))
-    blue_line.add_xaxis(blue_num)
-    blue_line.add_yaxis('开奖结果', blue_balls)
+    blue_line.set_global_opts(
+        title_opts=opts.TitleOpts(title="篮球"),
+        toolbox_opts=opts.ToolboxOpts(is_show=True),
+        datazoom_opts=opts.DataZoomOpts(),
+        xaxis_opts=opts.AxisOpts(type_="category", boundary_gap=False, name="开奖期数",
+                                 axislabel_opts=opts.LabelOpts(rotate=-90)),
+    )
+    blue_line.add_xaxis(xaxis_data=blue_num)
+    blue_line.add_yaxis(
+        series_name="篮球号码",
+        y_axis=blue_balls,
+        symbol="emptyCircle",
+        is_symbol_show=True,
+        label_opts=opts.LabelOpts(is_show=True),
+    )
 
-    page = Page(page_title='大乐透历史开奖数据分析', interval=3)
+    page = Page(page_title='大乐透历史开奖数据分析')
     page.add(blue_bar, blue_line)
     page.render('大乐透-篮球——历史开奖数据分析.html')
